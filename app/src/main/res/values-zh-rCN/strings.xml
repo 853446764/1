@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Samsung Root</string>
+    <string name="run_all">执行 DirtyFrag</string>
+    <string name="status_idle">空闲</string>
+    <string name="run_dialog_title">DirtyFrag 日志</string>
+    <string name="run_dialog_close">关闭</string>
+    <string name="run_running">⏳ 执行中…</string>
+    <string name="run_success">✅ 成功</string>
+    <string name="run_failed">❌ 失败</string>
+    <string name="chip_ready">就绪</string>
+    <string name="chip_hooked">已挂钩</string>
+    <string name="terminal_title">系统终端</string>
+    <string name="terminal_hint">输入命令</string>
+    <string name="terminal_send">发送</string>
+    <string name="terminal_button">终端</string>
+</resources>

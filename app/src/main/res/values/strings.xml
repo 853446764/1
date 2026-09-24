@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Samsung Root</string>
+    <string name="run_all">Run DirtyFrag</string>
+    <string name="status_idle">Idle.</string>
+    <string name="run_dialog_title">DirtyFrag Log</string>
+    <string name="run_dialog_close">Close</string>
+    <string name="run_running">⏳ Running…</string>
+    <string name="run_success">✅ Succeeded</string>
+    <string name="run_failed">❌ Failed</string>
+    <string name="chip_ready">READY</string>
+    <string name="chip_hooked">HOOKED</string>
+    <string name="terminal_title">System Terminal</string>
+    <string name="terminal_hint">Enter command</string>
+    <string name="terminal_send">Send</string>
+    <string name="terminal_button">Terminal</string>
+</resources>

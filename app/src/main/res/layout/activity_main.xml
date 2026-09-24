@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary"
+        android:letterSpacing="0.2"
+        android:textAllCaps="true" />
+
+    <!-- Top spacer -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Power Button -->
+    <Button
+        android:id="@+id/btnRunAll"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_power_button"
+        android:drawableTop="@drawable/ic_power"
+        android:drawablePadding="4dp"
+        android:paddingTop="30dp"
+        android:text="@string/run_all"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:letterSpacing="0.2"
+        android:stateListAnimator="@null"
+        android:elevation="15dp" />
+
+    <!-- Progress (hidden by default) -->
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleSmall"
+        android:indeterminateTint="@color/accent" />
+
+    <!-- Status Chip (pill shaped) -->
+    <TextView
+        android:id="@+id/statusChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="6dp"
+        android:background="@drawable/chip_ok"
+        android:text="@string/chip_ready"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:textColor="@color/textSecondary"
+        android:letterSpacing="0.15" />
+
+    <!-- Status identity text -->
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/status_idle"
+        android:textSize="10sp"
+        android:typeface="monospace"
+        android:textColor="#555555" />
+
+    <!-- Bottom spacer -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Terminal Button -->
+    <Button
+        android:id="@+id/btnTerminal"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/bg_terminal_btn"
+        android:drawableStart="@drawable/ic_terminal"
+        android:drawablePadding="8dp"
+        android:text="@string/terminal_button"
+        android:textSize="12sp"
+        android:textColor="@color/textSecondary"
+        android:textAllCaps="false"
+        android:letterSpacing="0.1"
+        android:stateListAnimator="@null" />
+
+    <!-- Log Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#1A1A1A" />
+
+    <!-- Log Area (flush to bottom) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/log_box">
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:typeface="monospace"
+            android:textSize="10sp"
+            android:textColor="@color/logText"
+            android:textIsSelectable="true" />
+    </ScrollView>
+
+</LinearLayout>
