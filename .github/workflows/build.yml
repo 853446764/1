@@ -22,20 +22,22 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+    - name: Grant execute permissions
+      run: chmod +x gradlew build.sh build-splice.sh
 
-    - name: Build Release APKs
-      run: ./gradlew assembleRelease
+    - name: Run Official Build Script
+      run: |
+        export ANDROID_NDK=$ANDROID_NDK_LATEST_HOME
+        ./build.sh
 
     - name: Upload DFReroot App APK
       uses: actions/upload-artifact@v4
       with:
         name: Samsung_Root_App
-        path: app/build/outputs/apk/release/app-release.apk
+        path: df_reroot.apk
 
     - name: Upload DFInstaller APK
       uses: actions/upload-artifact@v4
       with:
         name: DFInstaller
-        path: installer/build/outputs/apk/release/installer-release.apk
+        path: df_installer.apk
