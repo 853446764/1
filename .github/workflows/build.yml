@@ -1,0 +1,41 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Build Release APKs
+      run: ./gradlew assembleRelease
+
+    - name: Upload DFReroot App APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: Samsung_Root_App
+        path: app/build/outputs/apk/release/app-release.apk
+
+    - name: Upload DFInstaller APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: DFInstaller
+        path: installer/build/outputs/apk/release/installer-release.apk
