@@ -23,11 +23,12 @@ jobs:
         cache: gradle
 
     - name: Grant execute permissions
-      run: chmod +x gradlew build.sh build-splice.sh
+      run: chmod +x gradlew build.sh build-splice.sh create-keystore.sh
 
     - name: Run Official Build Script
       run: |
         export ANDROID_NDK=$ANDROID_NDK_LATEST_HOME
+        ./create-keystore.sh
         ./build.sh
 
     - name: Upload DFReroot App APK
