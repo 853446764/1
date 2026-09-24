@@ -17,8 +17,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/textPrimary"
-        android:letterSpacing="0.2"
-        android:textAllCaps="true" />
+        android:letterSpacing="0.2" />
 
     <!-- Top spacer -->
     <Space
@@ -29,21 +28,24 @@
     <!-- Power Button -->
     <Button
         android:id="@+id/btnRunAll"
-        android:layout_width="136dp"
-        android:layout_height="136dp"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/bg_power_button"
-        android:drawableTop="@drawable/ic_power"
-        android:drawablePadding="4dp"
-        android:paddingTop="30dp"
-        android:text="@string/run_all"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:letterSpacing="0.2"
         android:stateListAnimator="@null"
-        android:elevation="15dp" />
+        android:elevation="20dp" />
+
+    <!-- Power Button Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/run_all"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
+        android:letterSpacing="0.1"
+        android:textStyle="bold" />
 
     <!-- Progress (hidden by default) -->
     <ProgressBar
@@ -90,43 +92,64 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <!-- Terminal Button -->
-    <Button
-        android:id="@+id/btnTerminal"
+    <!-- Log Card with Terminal Header -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginHorizontal="20dp"
-        android:background="@drawable/bg_terminal_btn"
-        android:drawableStart="@drawable/ic_terminal"
-        android:drawablePadding="8dp"
-        android:text="@string/terminal_button"
-        android:textSize="12sp"
-        android:textColor="@color/textSecondary"
-        android:textAllCaps="false"
-        android:letterSpacing="0.1"
-        android:stateListAnimator="@null" />
+        android:layout_height="160dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_log">
 
-    <!-- Log Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="#1A1A1A" />
-
-    <!-- Log Area (flush to bottom) -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:background="@drawable/log_box">
-        <TextView
-            android:id="@+id/log"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:typeface="monospace"
-            android:textSize="10sp"
-            android:textColor="@color/logText"
-            android:textIsSelectable="true" />
-    </ScrollView>
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Console"
+                android:textColor="#555555"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textAllCaps="true" />
+
+            <Button
+                android:id="@+id/btnTerminal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:minWidth="60dp"
+                android:background="@null"
+                android:text=">_ 终端"
+                android:textColor="#3B82F6"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:stateListAnimator="@null" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#151515" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <TextView
+                android:id="@+id/log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:typeface="monospace"
+                android:textSize="9sp"
+                android:textColor="@color/logText"
+                android:textIsSelectable="true" />
+        </ScrollView>
+    </LinearLayout>
 
 </LinearLayout>

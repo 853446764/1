@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base card -->
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="16dp" />
             <solid android:color="#1A1508" />
-            <stroke android:width="1dp" android:color="#66F59E0B" />
         </shape>
     </item>
-    <item android:left="0dp" android:top="0dp" android:bottom="0dp" android:right="0dp">
-        <clip android:clipOrientation="horizontal" android:gravity="left">
-            <shape android:shape="rectangle">
-                <corners android:radius="16dp" />
-                <solid android:color="#00000000" />
-            </shape>
-        </clip>
+    <!-- Left edge indicator -->
+    <item android:right="250dp">
+        <shape android:shape="rectangle">
+            <corners
+                android:topLeftRadius="16dp"
+                android:bottomLeftRadius="16dp" />
+            <solid android:color="#F59E0B" />
+        </shape>
     </item>
 </layer-list>

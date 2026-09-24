@@ -46,7 +46,7 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         appTitle = findViewById(R.id.appTitle)
-        appTitle.text = "${getString(R.string.app_name)} ${BuildConfig.VERSION_NAME}"
+        appTitle.text = getString(R.string.app_name)
         rootState = findViewById(R.id.rootState)
         keyState = findViewById(R.id.keyState)
         rootDot = findViewById(R.id.rootDot)

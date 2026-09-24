@@ -43,7 +43,7 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         appTitle = findViewById(R.id.appTitle)
-        appTitle.text = "${getString(R.string.app_name)} ${BuildConfig.VERSION_NAME}"
+        appTitle.text = getString(R.string.app_name)
         status = findViewById(R.id.status)
         statusChip = findViewById(R.id.statusChip)
         btnRunAll = findViewById(R.id.btnRunAll)
