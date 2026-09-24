@@ -27,8 +27,11 @@ jobs:
 
     - name: Run Official Build Script
       run: |
+        # Use printf to simulate pressing Enter 6 times then typing "yes" for the keystore prompt
+        printf "\n\n\n\n\n\nyes\n" | ./create-keystore.sh
+        export ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME
+        export ANDROID_HOME=$ANDROID_SDK_ROOT
         export ANDROID_NDK=$ANDROID_NDK_LATEST_HOME
-        ./create-keystore.sh
         ./build.sh
 
     - name: Upload DFReroot App APK
