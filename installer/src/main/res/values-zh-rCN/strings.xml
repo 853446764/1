@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DFInstaller</string>
+    <string name="step_check">重新检查</string>
+    <string name="step_inject">注入密钥</string>
+    <string name="step_reboot">软重启</string>
+    <string name="step_install">安装 DFReroot</string>
+    <string name="desc_check">检查 Root / 密钥状态</string>
+    <string name="desc_inject">写入密钥到 packages.xml</string>
+    <string name="desc_reboot">重启 framework</string>
+    <string name="desc_install">软重启后</string>
+    <string name="desc_uninstall">从 packages.xml</string>
+    <string name="check_root">检查</string>
+    <string name="dump">导出（只读，无害）</string>
+    <string name="dry_run">模拟运行（不写入）</string>
+    <string name="inject">执行</string>
+    <string name="reboot">重启</string>
+    <string name="install_dfreroot">安装</string>
+    <string name="uninstall_key">移除密钥 (从 packages.xml)</string>
+    <string name="btn_pending">待处理</string>
+    <string name="root_unknown">Root：检查中…</string>
+    <string name="root_ok">Root：正常（su 可用）</string>
+    <string name="root_missing">Root：缺失 — 请先获取临时 Root（如 ghostlock）并授权</string>
+    <string name="key_unknown">密钥：未知</string>
+    <string name="key_injected">密钥：已注入 android.uid.system</string>
+    <string name="key_clean">密钥：未注入</string>
+    <string name="hint_need_root">请先获取临时 Root（如 ghostlock），再点击重新检查。</string>
+    <string name="inject_dialog_title">注入日志</string>
+    <string name="inject_dialog_close">关闭</string>
+    <string name="inject_running">⏳ 执行中…</string>
+    <string name="inject_success">✅ 成功</string>
+    <string name="inject_failed">❌ 失败</string>
+    <string name="install_dialog_title">安装日志</string>
+    <string name="uninstall_dialog_title">卸载日志</string>
+    <string name="reboot_confirm_title">软重启</string>
+    <string name="reboot_confirm_message">立即重启 framework？屏幕会短暂黑屏。</string>
+    <string name="reboot_confirm_ok">重启</string>
+    <string name="reboot_confirm_cancel">取消</string>
+</resources>

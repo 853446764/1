@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 渐变圆形底板 -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#6366F1"
+                android:endColor="#3B82F6" />
+        </shape>
+    </item>
+    <!-- 居中的电源图标 -->
+    <item
+        android:drawable="@drawable/ic_power"
+        android:gravity="center"
+        android:width="44dp"
+        android:height="44dp" />
+</layer-list>

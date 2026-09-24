@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/textPrimary" />
+
+        <!-- Status dots -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/rootDot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="●"
+                android:textSize="10sp"
+                android:textColor="@color/textSecondary" />
+
+            <TextView
+                android:id="@+id/keyDot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="●"
+                android:textSize="10sp"
+                android:textColor="@color/textSecondary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Status: Root -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="6dp">
+
+        <TextView
+            android:id="@+id/rootState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/root_unknown"
+            android:textSize="11sp"
+            android:textColor="@color/textSecondary" />
+    </LinearLayout>
+
+    <!-- Status: Key -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/keyState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/key_unknown"
+            android:textSize="11sp"
+            android:textColor="@color/textSecondary" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleSmall"
+        android:indeterminateTint="@color/accent" />
+
+    <!-- Pipeline Cards ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Card 1: Check -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card_normal"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="12dp">
+
+                    <TextView
+                        android:id="@+id/stepCheck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/step_check"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/desc_check"
+                        android:textSize="10sp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnRoot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:minWidth="72dp"
+                    android:background="@drawable/bg_btn_small"
+                    android:text="@string/check_root"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:textAllCaps="false"
+                    android:stateListAnimator="@null" />
+            </LinearLayout>
+
+            <!-- Card 2: Inject (styled as active in layout, code will manage dynamically) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card_normal"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="12dp">
+
+                    <TextView
+                        android:id="@+id/stepInject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/step_inject"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/desc_inject"
+                        android:textSize="10sp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnInject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:minWidth="72dp"
+                    android:background="@drawable/bg_btn_small"
+                    android:text="@string/inject"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:textAllCaps="false"
+                    android:stateListAnimator="@null" />
+            </LinearLayout>
+
+            <!-- Card 3: Reboot -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card_normal"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="12dp">
+
+                    <TextView
+                        android:id="@+id/stepReboot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/step_reboot"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/desc_reboot"
+                        android:textSize="10sp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnReboot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:minWidth="72dp"
+                    android:background="@drawable/bg_btn_small"
+                    android:text="@string/reboot"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:textAllCaps="false"
+                    android:stateListAnimator="@null" />
+            </LinearLayout>
+
+            <!-- Card 4: Install -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card_normal"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="12dp">
+
+                    <TextView
+                        android:id="@+id/stepInstall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/step_install"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/desc_install"
+                        android:textSize="10sp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnInstall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:minWidth="72dp"
+                    android:background="@drawable/bg_btn_small"
+                    android:text="@string/install_dfreroot"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary"
+                    android:textAllCaps="false"
+                    android:stateListAnimator="@null" />
+            </LinearLayout>
+
+            <!-- Hidden buttons for Dump/DryRun (referenced by Kotlin code) -->
+            <Button
+                android:id="@+id/btnDump"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/dump" />
+
+            <Button
+                android:id="@+id/btnDryRun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/dry_run" />
+
+            <!-- Uninstall danger button -->
+            <Button
+                android:id="@+id/btnUninstall"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_danger_btn"
+                android:text="@string/uninstall_key"
+                android:textSize="12sp"
+                android:textColor="#EF4444"
+                android:textAllCaps="false"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Console log card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_normal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="6dp"
+            android:text="Console"
+            android:textColor="#555555"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textAllCaps="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#151515" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <TextView
+                android:id="@+id/log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:typeface="monospace"
+                android:textSize="9sp"
+                android:textColor="@color/logText"
+                android:textIsSelectable="true" />
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

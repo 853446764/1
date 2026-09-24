@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/terminal_title"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary"
+        android:letterSpacing="0.15"
+        android:textAllCaps="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A" />
+
+    <ScrollView
+        android:id="@+id/termScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/logBg">
+        <TextView
+            android:id="@+id/termOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:typeface="monospace"
+            android:textSize="11sp"
+            android:textColor="@color/logText"
+            android:textIsSelectable="true" />
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/bg">
+
+        <EditText
+            android:id="@+id/termInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            android:hint="@string/terminal_hint"
+            android:singleLine="true"
+            android:imeOptions="actionSend"
+            android:inputType="text"
+            android:typeface="monospace"
+            android:textSize="13sp"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="#555555"
+            android:background="@drawable/bg_terminal_btn" 
+            android:paddingHorizontal="14dp" />
+
+        <Button
+            android:id="@+id/termSend"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/accentText"
+            android:textStyle="bold"
+            android:text="@string/terminal_send" />
+
+    </LinearLayout>
+
+</LinearLayout>
